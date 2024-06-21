@@ -1,0 +1,39 @@
+{
+  "name": "r34-module",
+  "version": "1.0.0",
+  "description": "A module to Manupilated rule34 API",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "rule34",
+    "hentai",
+    "api",
+    "booru",
+    "nsfw"
+  ],
+  "author": "Ray Senpai",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaySenpai69/r34-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RaySenpai69/r34-module/issues"
+  },
+  "homepage": "https://github.com/RaySenpai69/r34-module#readme"
+}
