@@ -67,7 +67,7 @@ function total_api_pages(pid) {
 }
 
 // src/rule34/rule34_function.ts
-async function r34_random({ gay_block = false }) {
+async function r34_random({ gay_block }) {
   let pages = total_api_pages(168e3);
   let random = Math.floor(Math.random() * pages);
   let { data } = await (0, import_axios2.default)(
@@ -105,10 +105,10 @@ async function r34_random({ gay_block = false }) {
 async function r34_search({ search_tag = "", block_tags = [] }) {
   const pid = await r34_pid(search_tag);
   if (pid == 0 || search_tag.length === 0) return { status: 400 };
-  const pages = total_api_pages(pid);
+  let pages = total_api_pages(pid);
   if (pages != 0) {
-    const random = Math.floor(Math.random() * pages);
-    const { data } = await (0, import_axios2.default)(
+    let random = Math.floor(Math.random() * pages);
+    let { data } = await (0, import_axios2.default)(
       `https://api.rule34.xxx/index.php?page=dapi&s=post&tags=${search_tag}&pid=${random}&q=index&json=1`
     );
     let ray = [...data.map((obj) => obj.file_url)];

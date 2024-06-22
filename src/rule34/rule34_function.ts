@@ -1,8 +1,7 @@
 import axios from "axios";
 import { total_api_pages, r34_pid } from "./rule34_main";
 
-
-export async function r34_random( {gay_block }: { gay_block: boolean } ) {
+export async function r34_random({ gay_block }: { gay_block: boolean }) {
   let pages = total_api_pages(168000);
   let random = Math.floor(Math.random() * pages);
   let { data } = await axios(
@@ -24,7 +23,7 @@ export async function r34_random( {gay_block }: { gay_block: boolean } ) {
       "bovid",
       "demon",
       "dog",
-      "penis"
+      "penis",
     ];
 
     data.forEach((obj: { tags: string | any[]; file_url: any }) => {
@@ -40,12 +39,12 @@ export async function r34_random( {gay_block }: { gay_block: boolean } ) {
 }
 export async function r34_search({ search_tag = "", block_tags = [] }) {
   const pid = await r34_pid(search_tag);
-  if (pid == 0  || search_tag.length === 0) return { status: 400 };
-  
-  const pages = total_api_pages(pid);
+  if (pid == 0 || search_tag.length === 0) return { status: 400 };
+
+  let pages = total_api_pages(pid);
   if (pages != 0) {
-    const random = Math.floor(Math.random() * pages);
-    const { data } = await axios(
+    let random = Math.floor(Math.random() * pages);
+    let { data } = await axios(
       `https://api.rule34.xxx/index.php?page=dapi&s=post&tags=${search_tag}&pid=${random}&q=index&json=1`
     );
     let ray = [...data.map((obj: { file_url: any }) => obj.file_url)];
