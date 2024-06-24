@@ -1,5 +1,5 @@
 import axios from "axios";
-import { total_api_pages, r34_pid } from "./rule34_main";
+import { api_pid, total_api_pages } from "../base_functions/base_function";
 
 export async function r34_random({ gay_block }: { gay_block: boolean }) {
   let pages = total_api_pages(168000);
@@ -38,7 +38,7 @@ export async function r34_random({ gay_block }: { gay_block: boolean }) {
   }
 }
 export async function r34_search({ search_tag = "", block_tags = [] }) {
-  const pid = await r34_pid(search_tag);
+  const pid = await api_pid("https://rule34.xxx", search_tag);
   if (pid == 0 || search_tag.length === 0) return { status: 400 };
 
   let pages = total_api_pages(pid);
