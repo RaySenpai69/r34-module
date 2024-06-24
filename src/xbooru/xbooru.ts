@@ -32,3 +32,41 @@ export const xbooru_search = async ({ search_tag = "", block_tags = [] }) => {
   }
   return ray;
 };
+
+
+export const xbooru_random = async ({ gay_block }:{ gay_block: boolean }) => {
+  let pages = total_api_pages(168000);
+  let random = Math.floor(Math.random() * pages);
+  let { data } = await axios(
+    `https://xbooru.com/index.php?page=dapi&s=post&pid=${random}&q=index&json=1`
+  );
+  let ray = [...data.map((obj: { directory: any; image: any }) => `https://img.xbooru.com/images/${obj.directory}/${obj.image}`)];
+  if (gay_block == true) {
+    let urlSet = new Set();
+    let block = [
+      "male",
+      "gay",
+      "trap",
+      "yaoi",
+      "balls",
+      "dick",
+      "boy",
+      "trap",
+      "furry",
+      "bovid",
+      "demon",
+      "dog",
+      "penis",
+    ];
+
+    data.forEach((obj: { tags: string | any[]; directory: any; image: any }) => {
+      if (block.some((element) => obj.tags.includes(element))) {
+        urlSet.add(`https://img.xbooru.com/images/${obj.directory}/${obj.image}`);
+      }
+    });
+    ray = ray.filter((url) => !urlSet.has(url));
+    return ray;
+  } else {
+    return ray;
+  }
+}
