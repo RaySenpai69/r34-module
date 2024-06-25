@@ -1,7 +1,7 @@
 import axios from "axios";
 import { api_pid, total_api_pages } from "../base_functions/base_function";
 
-export const hypno_random = async ({ gay_block }: { gay_block: true }) => {
+export const hypno_random = async ({ gay_block }: { gay_block?: boolean } = { gay_block: false }) => {
   let pages = total_api_pages(109788);
   let random = Math.floor(Math.random() * pages);
   let { data } = await axios(

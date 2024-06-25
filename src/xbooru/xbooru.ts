@@ -34,7 +34,7 @@ export const xbooru_search = async ({ search_tag = "", block_tags = [] }) => {
 };
 
 
-export const xbooru_random = async ({ gay_block }:{ gay_block: boolean }) => {
+export const xbooru_random = async ({ gay_block }: { gay_block?: boolean } = { gay_block: false }) => {
   let pages = total_api_pages(168000);
   let random = Math.floor(Math.random() * pages);
   let { data } = await axios(

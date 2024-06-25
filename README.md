@@ -1,11 +1,11 @@
 <div align="center">
-<a href="https://github.com/RaySenpai69/r34-module"><img src="https://i.ibb.co/yX2kq7y/header2.png" alt="r34-module" border="0"></a>
+<a href="https://github.com/RaySenpai69/r34-module"><img src="https://safebooru.org//images/4619/bc84c11c65ab6aaaf77f44b6b2ea4a33d5c65360.png" alt="r34-module" border="0"></a>
 
 # **r34-module</er></a></h1>**
 
 [![NPM](https://img.shields.io/badge/Available%20On-NPM-lightgrey.svg?logo=npm&logoColor=339933&labelColor=white&style=flat-square)](https://www.npmjs.com/package/r34-module)
 
-> Fetch images,videos,gifs from [Rule34](https://rule34.xxx/) 
+> Fetch images,videos,gifs from [Rule34](https://rule34.xxx/), [xbooru](https://xbooru.com) many more
 </div><br/>
 <br/>
 
@@ -25,9 +25,22 @@ pnpm install r34-module
 
 ## Note
 
-- Make Sure To use tags available in rule34 is more than one page
+- Make Sure To use tags available in your desire site is more than one page
 -  `block_tags` is optional fetature
 -  This module supports `cjs, mjs, ts`
+-  `gay_block` is optional feature
+
+## All Function(s)
+Function | Description
+---|---
+r34_search | Search Images from [Rule34](https://rule34.xxx/) only using tag
+r34_random | Random image from [Rule34](https://rule34.xxx/) 
+xbooru_search | Search Images from [Xbooru](https://xbooru.com) only using tag
+xbooru_random | Random image from [Xbooru](https://xbooru.com) 
+hypno_search | Search Images from [Hypnohub](https://hypnohub.net/)  only using tag
+hypno_random | Random image from [Hypnohub](https://hypnohub.net/) 
+safe_search | Search Images from [Safebooru](https://safebooru.org/) only using tag
+safe_random | Random image from [Safebooru](https://safebooru.org/)
 
 ## Examples
 
@@ -35,9 +48,7 @@ pnpm install r34-module
 import { r34_random } from "r34-module"
 
 ;(async () => {
-    // Make gay_block true if you want to filter gay,male,furry from array
-    // ps No hate from gay people pls
-    let r34 = await r34_random({ gay_block : false })
+    let r34 = await r34_random()
     console.log(r34)
 })()
 /**
@@ -51,6 +62,29 @@ import { r34_random } from "r34-module"
   ]
  */
 ```
+```ts
+import { r34_random } from "r34-module"
+
+;(async () => {
+    // Make gay_block true if you want to filter gay,male,furry from array
+    // ps No hate from gay people pls
+    let r34 = await r34_random({gay_block: true})
+    console.log(r34)
+})()
+/**
+ * It should response like this
+ * [
+  'https://api-cdn.rule34.xxx/images/2378/d408ad0f8719c4e20b9935d0c5f74615.jpeg',
+  'https://api-cdn.rule34.xxx/images/2378/80b2cdb790deb05799ffc21165c6ee13.jpeg',
+  'https://api-cdn.rule34.xxx/images/2378/95d79bb38d4508642e4186080f2f54b3.png',
+  'https://api-cdn.rule34.xxx/images/2378/7759e328bbb9a158dd1b54f65ce55a77.jpeg',
+  'https://api-cdn.rule34.xxx/images/2378/ffc00aa8eaedf68e88642d3e21391a93.jpeg',
+  'https://api-cdn.rule34.xxx/images/2378/f72ae99dc8ccd123c673e3bbbca57c5f.jpeg',
+  ...
+]
+ */
+```
+
 ```ts
 import { r34_search } from "r34-module"
 
