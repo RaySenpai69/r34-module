@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/RaySenpai69/r34-module"><img src="https://safebooru.org//images/4619/bc84c11c65ab6aaaf77f44b6b2ea4a33d5c65360.png" alt="r34-module" border="0"></a>
+<a href="https://github.com/RaySenpai69/r34-module"><img src="https://i.ibb.co/0B5sMcb/download.png" alt="r34-module" border="0"></a>
 
 # **r34-module</er></a></h1>**
 
@@ -41,6 +41,8 @@ hypno_search | Search Images from [Hypnohub](https://hypnohub.net/)  only using 
 hypno_random | Random image from [Hypnohub](https://hypnohub.net/) 
 safe_search | Search Images from [Safebooru](https://safebooru.org/) only using tag
 safe_random | Random image from [Safebooru](https://safebooru.org/)
+real_search | Search Images from [Realbooru](https://realbooru.com//) only using tag
+real_random | Random image from [Realbooru](https://realbooru.com/)
 
 ## Examples
 
