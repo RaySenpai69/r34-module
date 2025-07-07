@@ -38,8 +38,9 @@ export const hypno_random = async ({ gay_block }: { gay_block?: boolean } = { ga
   }
 };
 
-export async function hypno_search({ search_tag = "", block_tags = [] }) {
-    const pid = await api_pid("https://hypnohub.net", search_tag);
+export async function hypno_search({ search_tags = [], block_tags = [] }) {
+    let search_tag = search_tags.toString().replace(",","+");
+    const pid = await api_pid("https://hypnohub.net",search_tag );
     if (pid == 0 || search_tag.length === 0) return { status: 400 };
   
     let pages = total_api_pages(pid);

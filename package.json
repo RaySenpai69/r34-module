@@ -19,12 +19,12 @@
   "author": "Ray Senpai",
   "license": "MIT",
   "devDependencies": {
-    "tsup": "^8.1.0",
-    "typescript": "^5.5.2"
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "axios": "^1.7.2",
-    "cheerio": "^1.0.0-rc.12"
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0"
   },
   "directories": {
     "test": "test"

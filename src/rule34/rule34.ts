@@ -37,9 +37,11 @@ export async function r34_random({ gay_block }: { gay_block?: boolean } = { gay_
     return ray;
   }
 }
-export async function r34_search({ search_tag = "", block_tags = [] }) {
+export async function r34_search({ search_tags = [], block_tags = [] }) {
+  let search_tag = search_tags.toString().replace(",","+");
   const pid = await api_pid("https://rule34.xxx", search_tag);
   if (pid == 0 || search_tag.length === 0) return { status: 400 };
+
 
   let pages = total_api_pages(pid);
   if (pages != 0) {

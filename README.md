@@ -44,6 +44,10 @@ safe_random | Random image from [Safebooru](https://safebooru.org/)
 real_search | Search Images from [Realbooru](https://realbooru.com//) only using tag
 real_random | Random image from [Realbooru](https://realbooru.com/)
 
+
+## Update 🚨
+### Realbooru official API is currently shutdown please wait some week/months otherwise I will update it to directly fetch from webpage
+
 ## Examples
 
 ```ts
@@ -92,25 +96,23 @@ import { r34_search } from "r34-module"
 
 ;(async () => {
     // block_tags is optional feature
-    let r34 = await r34_search({ search_tag : "hatsune_miku", block_tags: ["male", "trap"] })
+    let r34 = await r34_search({search_tags:["anime", "female",], block_tags:["animal", "pennis","dick"]})
     console.log(r34)
 })()
 
 /**
  * Here is a example Response
  * [
-  'https://api-cdn.rule34.xxx/images/2329/d78f9584656cbaeb56e5b08928c89a09.png',
-  'https://api-cdn.rule34.xxx/images/2329/b9bbeefa0f3a4e07adbe7fe8d72a0183.png',
-  'https://api-cdn.rule34.xxx/images/2329/54abb08fcd16161549c92f67daa1c3a3.png',
-  'https://api-cdn.rule34.xxx/images/2329/c3ccf85503044b6267a17829eb90a043.png',
-  'https://api-cdn.rule34.xxx/images/2329/20f54d4dce75d60fadbb07aa001ccc99.png',
-  'https://api-cdn.rule34.xxx/images/2329/ebfeb4689e4cccffff5a34b44715f827.png',
-  'https://api-cdn.rule34.xxx/images/2329/84298bb20c05282762d1e1f01c3365d6.png',
-  'https://api-cdn.rule34.xxx/images/2329/6aed8e0f1663a4dac3ca30532e9e0c29.png',
-  'https://api-cdn.rule34.xxx/images/1305/1a966efa123d4ddedb4745d5460fb32d.png',
-  'https://api-cdn.rule34.xxx/images/281/9e1c2d77d3dcea3aad822cff79f4720c.jpeg',
-  'https://api-cdn.rule34.xxx/images/741/d8dcf52748a519beef3c92e0665c3c1a.png',
-  'https://api-cdn.rule34.xxx/images/2685/374654702538437420731957e79ee435.png',
+  'https://api-cdn.rule34.xxx/images/2597/df993b42327464ead2cd09ae736e957a.png',
+  'https://api-cdn.rule34.xxx/images/3359/6a52d5989e2334a4dae5902efce3495a.png',
+  'https://api-cdn.rule34.xxx/images/1717/5c2a89c768b2db8a0b34c3a01aabb952.png',
+  'https://api-cdn.rule34.xxx/images/1717/1800155c57962001054805a40c328fd7.png',
+  'https://api-cdn.rule34.xxx/images/1717/e0d026c43187cae0f7bce536ee936688.png',
+  'https://api-cdn.rule34.xxx/images/1717/8bbb28d05e6ffc8e0c93d7bf5402228f.png',
+  'https://api-cdn.rule34.xxx/images/1717/f1e83b1674be40aeb5b95130f4237507.png',
+  'https://api-cdn.rule34.xxx/images/1717/d5f0b324a1eaf5bcf9eca849f0546ad8.png',
+  'https://api-cdn.rule34.xxx/images/1717/7f5f56a71b7caa94017697de5bc0cc49.png',
+  'https://api-cdn.rule34.xxx/images/1717/18f206bb86da4c8bd181bea75cec8929.png',
   ...
   ]
 */

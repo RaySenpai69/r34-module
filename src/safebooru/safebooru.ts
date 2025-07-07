@@ -16,7 +16,8 @@ export const safe_random = async () => {
   return ray;
 };
 
-export async function safe_search({ search_tag = "", block_tags = [] }) {
+export async function safe_search({ search_tags = [], block_tags = [] }) {
+  let search_tag = search_tags.toString().replace(",","+");
   const pid = await api_pid("https://safebooru.org", search_tag);
   if (pid == 0 || search_tag.length === 0) return { status: 400 };
 

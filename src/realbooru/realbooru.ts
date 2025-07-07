@@ -1,7 +1,8 @@
 import axios from "axios";
 import { api_pid, total_api_pages } from "../base_functions/base_function";
 
-export const real_search = async ({ search_tag = "", block_tags = [] }) => {
+export const real_search = async ({ search_tags = [], block_tags = [] }) => {
+  let search_tag = search_tags.toString().replace(",","+");
   let pid = await api_pid("https://realbooru.com", search_tag);
   if (pid == 0 || search_tag.length === 0) return { status: 400 };
   let pages = total_api_pages(pid);
